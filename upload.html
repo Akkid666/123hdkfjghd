@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Upload — Private File Share</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div><p class="eyebrow">PRIVATE STORAGE</p><h1>Upload files</h1></div>
+      <a class="button secondary" href="/">Back to files</a>
+    </header>
+
+    <section id="login-panel" class="panel">
+      <h2>Sign in</h2>
+      <p class="muted">Sign in before uploading.</p>
+      <form id="login-form">
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <button class="button" type="submit">Sign in</button>
+        <p id="login-error" class="error" role="status"></p>
+      </form>
+    </section>
+
+    <section id="upload-panel" class="panel hidden">
+      <h2>Choose files</h2>
+      <p class="muted">Select the files yourself. They will be stored privately and will not have public download URLs.</p>
+      <form id="upload-form">
+        <label for="files">Files (up to 2 per upload)</label>
+        <input id="files" type="file" multiple required>
+        <p class="hint">Maximum 2 files, 4 MB each. Do not upload passwords, school records, or other sensitive information.</p>
+        <button class="button" type="submit">Upload selected files</button>
+      </form>
+      <div id="upload-status" class="status" role="status"></div>
+    </section>
+    <footer>Uploads require your deliberate file selection and a valid password.</footer>
+  </main>
+  <script src="/upload.js" defer></script>
+</body>
+</html>
